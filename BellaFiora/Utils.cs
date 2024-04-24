@@ -10,7 +10,7 @@ using osu.Game.Beatmaps.Formats;
 using osu.Game.IO;
 using osu.Game.IO.Serialization;
 
-namespace BellaFiora
+namespace BellaFioraUtils
 {
     public static class Utils
     {
