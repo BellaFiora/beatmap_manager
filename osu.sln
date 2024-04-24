@@ -61,7 +61,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "osu.Game.Rulesets.Pippidon"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "osu.Game.Rulesets.Pippidon.Tests", "Templates\Rulesets\ruleset-scrolling-example\osu.Game.Rulesets.Pippidon.Tests\osu.Game.Rulesets.Pippidon.Tests.csproj", "{1743BF7C-E6AE-4A06-BAD9-166D62894303}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BellaFiora", "BellaFiora\BellaFiora.csproj", "{1A967E79-D9ED-4D26-BD07-2E8222EB7560}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BellaFioraUtils", "BellaFiora\BellaFioraUtils.csproj", "{1A967E79-D9ED-4D26-BD07-2E8222EB7560}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BeatmapManager", "BeatmapManager\BeatmapManager.vcxproj", "{141871DE-F189-4ADB-834D-4C7343184BA8}"
 EndProject
