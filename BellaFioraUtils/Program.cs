@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BellaFioraUtils
 {
-    public static class Program
+    public class Program
     {
         public static HttpListener Listener = new HttpListener();
         public static string Url = "http://localhost:8080/";
@@ -76,8 +76,19 @@ namespace BellaFioraUtils
             Listener.Start();
             Console.WriteLine("Listening for queries on {0}", Url);
             Task listenTask = HandleIncomingConnections();
-            listenTask.GetAwaiter().GetResult();
-            Listener.Close();
+            using (BellaFioraHost host = new BellaFioraHost())
+            {
+                try
+                {
+                    host.Start();
+                    listenTask.GetAwaiter().GetResult();
+                    Listener.Close();
+                }
+                finally
+                {
+                    host.Exit();
+                }
+            }
         }
     }
 }

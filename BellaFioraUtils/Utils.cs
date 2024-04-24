@@ -7,16 +7,6 @@ using osu.Game.Beatmaps.Formats;
 using osu.Game.IO;
 using osu.Game.IO.Serialization;
 using osu.Game.Beatmaps;
-using osu.Game.Rulesets.Osu.Beatmaps;
-using osu.Game.Rulesets.Taiko.Beatmaps;
-using osu.Game.Rulesets.Catch.Beatmaps;
-using osu.Game.Rulesets.Mania.Beatmaps;
-using osu.Game.Rulesets.Osu.Objects;
-using osu.Game.Rulesets.Taiko.Objects;
-using osu.Game.Rulesets.Catch.Objects;
-using osu.Game.Rulesets.Mania.Objects;
-using osu.Game.Rulesets;
-using osu.Game.Beatmaps.
 
 namespace BellaFioraUtils
 {
@@ -48,8 +38,8 @@ namespace BellaFioraUtils
                         PrintError("Failed to parse beatmap: " + e);
                         return 1;
                     }
-                    WorkingBeatmap wbm = 
-                    GetPlayableBeatmap(beatmap.BeatmapInfo.Ruleset);
+                    //WorkingBeatmap wbm = 
+                    //GetPlayableBeatmap(beatmap.BeatmapInfo.Ruleset);
                     var processor = beatmap.BeatmapInfo.Ruleset.CreateInstance().CreateBeatmapProcessor(beatmap);
                     // there is no Taiko or Mania beatmap processor
                     if (processor != null)
