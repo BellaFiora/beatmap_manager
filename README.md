@@ -1,8 +1,8 @@
 # Beatmap Manager
 
-Server side beatmap manager of Bella Fiora.
+Client side beatmap manager of Bella Fiora.
 The osu!lazer repo was forked for convenience.
-The BellaFiora and BeatmapManager projects under are independant of the osu Solution.
+The BellaFioraUtils and BeatmapManager projects under are independant of the osu Solution.
 
 The BellaFioraUtils Project requires the osu.Game Nuget package, as well as these 4 .dll's:
 - osu.Game.Rulesets.Catch
