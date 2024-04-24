@@ -7,11 +7,14 @@ using osu.Game.Beatmaps.Formats;
 using osu.Game.IO;
 using osu.Game.IO.Serialization;
 using osu.Game.Beatmaps;
+using osu.Game;
+using osu.Game.Screens.Play;
 
 namespace BellaFioraUtils
 {
     public static class Utils
     {
+        public static OsuGame Osu = new OsuGame();
         public static void PrintError(string message, params object[] args)
         {
             var old = Console.ForegroundColor;
@@ -38,6 +41,8 @@ namespace BellaFioraUtils
                         PrintError("Failed to parse beatmap: " + e);
                         return 1;
                     }
+                    var a = new BellaFioraPlayer();
+                    //WorkingBeatmap wbm = new WorkingBeatmap(beatmap.BeatmapInfo.Ruleset);
                     //WorkingBeatmap wbm = 
                     //GetPlayableBeatmap(beatmap.BeatmapInfo.Ruleset);
                     var processor = beatmap.BeatmapInfo.Ruleset.CreateInstance().CreateBeatmapProcessor(beatmap);

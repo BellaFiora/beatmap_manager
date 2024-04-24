@@ -8,14 +8,12 @@ using osu.Game.Tests;
 using System;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using osu.Game;
 using System.Threading;
 
 namespace BellaFioraUtils
 {
     public class BellaFioraHost : CleanRunHeadlessGameHost
     {
-        protected OsuGame Osu = new OsuGame();
         public override bool CanExit => false;
         public override IEnumerable<KeyBinding> PlatformKeyBindings => new List<KeyBinding>();
         public BellaFioraHost()
@@ -42,10 +40,10 @@ namespace BellaFioraUtils
         // Taken from osu.Game.Tests.ImportTest.cs
         public void Start()
         {
-            Task.Factory.StartNew(() => Run(Osu), TaskCreationOptions.LongRunning)
+            Task.Factory.StartNew(() => Run(Utils.Osu), TaskCreationOptions.LongRunning)
                 .ContinueWith(t => Assert.Fail($"Host threw exception {t.Exception}"), TaskContinuationOptions.OnlyOnFaulted);
 
-            waitForOrAssert(() => Osu.IsLoaded, @"osu! failed to start in a reasonable amount of time");
+            waitForOrAssert(() => Utils.Osu.IsLoaded, @"osu! failed to start in a reasonable amount of time");
 
             bool ready = false;
             // wait for two update frames to be executed. this ensures that all components have had a change to run LoadComplete and hopefully avoid
